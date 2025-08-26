@@ -2,6 +2,8 @@ package Java.bai014;
 
 import java.math.BigDecimal;
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -79,35 +81,45 @@ public class RegexPatter {
     }
 
     public static void dateJava() {
-        Date currentDate = new Date();
-        System.out.println("Current Date:" + currentDate);
-        System.out.println("-------");
+        // Date currentDate = new Date();
+        // System.out.println("Current Date:" + currentDate);
+        // System.out.println("-------");
 
-        String dateToStr = DateFormat.getInstance().format(currentDate);
-        System.out.println("DateFormat.getInstance(): " + dateToStr);
-        System.out.println("-------");
+        // String dateToStr = DateFormat.getInstance().format(currentDate);
+        // System.out.println("DateFormat.getInstance(): " + dateToStr);
+        // System.out.println("-------");
 
-        dateToStr = DateFormat.getTimeInstance().format(currentDate);
-        System.out.println("DateFormat.getTimeInstance(): " + dateToStr);
+        // dateToStr = DateFormat.getTimeInstance().format(currentDate);
+        // System.out.println("DateFormat.getTimeInstance(): " + dateToStr);
 
-        System.out.println("-------");
-        dateToStr = DateFormat.getDateInstance().format(currentDate);
-        System.out.println("DateFormat.getDateInstance(): " + dateToStr);
+        // System.out.println("-------");
+        // dateToStr = DateFormat.getDateInstance().format(currentDate);
+        // System.out.println("DateFormat.getDateInstance(): " + dateToStr);
 
-        System.out.println("-------");
-        dateToStr = DateFormat.getDateTimeInstance().format(currentDate);
-        System.out.println("DateFormat.getDateTimeInstance(): " + dateToStr);
+        // System.out.println("-------");
+        // dateToStr = DateFormat.getDateTimeInstance().format(currentDate);
+        // System.out.println("DateFormat.getDateTimeInstance(): " + dateToStr);
 
-        System.out.println("-------");
-        dateToStr = DateFormat.getTimeInstance().format(currentDate);
-        System.out.println("DateFormat.getTimeInstance(): " + dateToStr);
+        // System.out.println("-------");
+        // dateToStr = DateFormat.getTimeInstance().format(currentDate);
+        // System.out.println("DateFormat.getTimeInstance(): " + dateToStr);
 
-        System.out.println("-------");
-        dateToStr = DateFormat.getTimeInstance(DateFormat.SHORT).format(currentDate);
-        System.out.println("DateFormat.getTimeInstance(DateFormat.SHORT): " + dateToStr);
+        // System.out.println("-------");
+        // dateToStr = DateFormat.getTimeInstance(DateFormat.SHORT).format(currentDate);
+        // System.out.println("DateFormat.getTimeInstance(DateFormat.SHORT): " + dateToStr);
 
-        System.out.println("-------");
-        dateToStr = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(currentDate);
-        System.out.println("DateFormat.getTimeInstance(DateFormat.MEDIUM): " + dateToStr);
+        // System.out.println("-------");
+        // dateToStr = DateFormat.getTimeInstance(DateFormat.MEDIUM).format(currentDate);
+        // System.out.println("DateFormat.getTimeInstance(DateFormat.MEDIUM): " + dateToStr);
+
+        String yyyy_MM_DD = "yyyy-MM-dd";
+        String DD_MM_yyyy = "dd-MM-yyyy";
+
+        // convert LocalDate to String 
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DD_MM_yyyy);
+        LocalDate localDate = LocalDate.now();
+        String dateFormatted = localDate.format(formatter);
+        System.out.println(dateFormatted);
     }
 }
