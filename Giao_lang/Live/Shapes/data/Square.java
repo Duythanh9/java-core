@@ -1,0 +1,18 @@
+package Giao_lang.Live.Shapes.data;
+
+// V trọn vẹn giống HCN, ko dị biệt về đặc tính
+public class Square extends Rectangle {
+
+    public Square(String owner, String color, String borderColor, double edge) {
+        super(owner, color, borderColor, edge, edge);
+
+    }
+    // ta muốn in theo cách của V, cho nên cần viết lại hàm paint(),
+    // duy nhất paint() ko cần những hàm S(), p()
+
+    @Override
+    public void paint() {
+        System.out.printf("|%-10s|%-10s|%-10s|%-10s|%-4.1f|  - |%-7.2f|\n", "Square",
+                owner, color, borderColor, a, getArea());
+    }
+}
